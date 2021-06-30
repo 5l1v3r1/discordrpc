@@ -3,17 +3,19 @@ import time, pypresence, struct, os, colorama
 from pypresence import *
 from colorama import Fore
 
-os.system('cls')
+def startup():
+    os.system('cls')
+    
+    print(f"""
+    {Fore.BLUE}██████╗ ██╗ ██████╗ █████╗  █████╗ ██████╗ ██████╗       ██████╗ ██████╗  █████╗
+    ██╔══██╗██║██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗      ██╔══██╗██╔══██╗██╔══██╗{Fore.CYAN}
+    ██║  ██║██║╚█████╗ ██║  ╚═╝██║  ██║██████╔╝██║  ██║█████╗██████╔╝██████╔╝██║  ╚═╝
+    ██║  ██║██║ ╚═══██╗██║  ██╗██║  ██║██╔══██╗██║  ██║╚════╝██╔══██╗██╔═══╝ ██║  ██╗{Fore.RESET}
+    ██████╔╝██║██████╔╝╚█████╔╝╚█████╔╝██║  ██║██████╔╝      ██║  ██║██║     ╚█████╔╝
+    ╚═════╝ ╚═╝╚═════╝  ╚════╝  ╚════╝ ╚═╝  ╚═╝╚═════╝       ╚═╝  ╚═╝╚═╝      ╚════╝ 
+    """)
 
-print(f"""
-{Fore.BLUE}██████╗ ██╗ ██████╗ █████╗  █████╗ ██████╗ ██████╗       ██████╗ ██████╗  █████╗
-██╔══██╗██║██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗      ██╔══██╗██╔══██╗██╔══██╗{Fore.CYAN}
-██║  ██║██║╚█████╗ ██║  ╚═╝██║  ██║██████╔╝██║  ██║█████╗██████╔╝██████╔╝██║  ╚═╝
-██║  ██║██║ ╚═══██╗██║  ██╗██║  ██║██╔══██╗██║  ██║╚════╝██╔══██╗██╔═══╝ ██║  ██╗{Fore.RESET}
-██████╔╝██║██████╔╝╚█████╔╝╚█████╔╝██║  ██║██████╔╝      ██║  ██║██║     ╚█████╔╝
-╚═════╝ ╚═╝╚═════╝  ╚════╝  ╚════╝ ╚═╝  ╚═╝╚═════╝       ╚═╝  ╚═╝╚═╝      ╚════╝ 
-""")
-
+#inputs with colorama due to cmd not supporting it with standard input
 clientidinput = f'[{Fore.BLUE}+{Fore.RESET}] Please enter your applications Client ID: '
 rpcstatusinput = f'[{Fore.BLUE}+{Fore.RESET}] Please enter your applications Status: '
 rpcdetailsinput = f'[{Fore.BLUE}+{Fore.RESET}] Please enter your applications Details: '
@@ -29,7 +31,9 @@ button1link_input = f'[{Fore.BLUE}+{Fore.RESET}] Please enter your 1st Buttons L
 button2text_input = f'[{Fore.BLUE}+{Fore.RESET}] Please enter your 2nd Buttons Name: '
 button2link_input = f'[{Fore.BLUE}+{Fore.RESET}] Please enter your 2nd Buttons Link: '
 
+startup()
 
+#get user information
 clientID = input(f'{clientidinput}')
 print(' ')
 rpcstatus = input(f'{rpcstatusinput}')
@@ -55,25 +59,18 @@ print(' ')
 button2link = input(f'{button2link_input}')
 print(' ')
 
-os.system('cls')
-
-print(f"""
-{Fore.BLUE}██████╗ ██╗ ██████╗ █████╗  █████╗ ██████╗ ██████╗       ██████╗ ██████╗  █████╗
-██╔══██╗██║██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗      ██╔══██╗██╔══██╗██╔══██╗{Fore.CYAN}
-██║  ██║██║╚█████╗ ██║  ╚═╝██║  ██║██████╔╝██║  ██║█████╗██████╔╝██████╔╝██║  ╚═╝
-██║  ██║██║ ╚═══██╗██║  ██╗██║  ██║██╔══██╗██║  ██║╚════╝██╔══██╗██╔═══╝ ██║  ██╗{Fore.RESET}
-██████╔╝██║██████╔╝╚█████╔╝╚█████╔╝██║  ██║██████╔╝      ██║  ██║██║     ╚█████╔╝
-╚═════╝ ╚═╝╚═════╝  ╚════╝  ╚════╝ ╚═╝  ╚═╝╚═════╝       ╚═╝  ╚═╝╚═╝      ╚════╝ 
-""")
+startup()
 
 print(f'[{Fore.BLUE}+{Fore.RESET}] Discord-RPC Started Successfully...')
 
+#setup rpc connection to discord client
 RPC = Presence(clientID)
 RPC.connect()
 starttime = int(time.time())
 
 try:
     while True:
+        #set vars for discord
         RPC.update(
             state = rpcdetails,
             details = rpcstatus,
@@ -84,7 +81,10 @@ try:
             start = starttime,
             buttons = [{"label": button1text, "url": button1link}, {"label": button2text, "url": button2link}]
         )
+        #refresh with our variable
         time.sleep(int(refreshtime))
+
+#error diagnosis / print errors
 except pypresence.exceptions.InvalidPipe as error1:
     print(f"\n[{Fore.RED}!{Fore.RESET}] Make sure Discord is Running!")
 except pypresence.exceptions.InvalidID  as error2:
