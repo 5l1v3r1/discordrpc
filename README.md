@@ -6,9 +6,9 @@ Discord-RPC is a Custom Discord Rich Presence Tool which allows you to easily sp
 
 ![image](https://user-images.githubusercontent.com/75194878/123886987-8c522b00-d948-11eb-8208-8f2685605a77.png)
 
-![image](https://user-images.githubusercontent.com/75194878/123887489-801a9d80-d949-11eb-9bca-631f40ce14fd.png)
-
 ![image](https://user-images.githubusercontent.com/75194878/123887948-59109b80-d94a-11eb-8558-85cd56d52ca7.png)
+
+![image](https://user-images.githubusercontent.com/75194878/123887489-801a9d80-d949-11eb-9bca-631f40ce14fd.png)
 
 > Client ID
 
