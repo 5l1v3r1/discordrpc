@@ -1,9 +1,9 @@
-# Discord-RPC
+# DiscoRPC 🥶
 [![pypresence](https://img.shields.io/badge/using-pypresence-00bb88.svg?style=for-the-badge&logo=discord&logoWidth=20)](https://github.com/qwertyquerty/pypresence)
 
-Discord-RPC is a Custom Discord Rich Presence Tool which allows you to easily spice up your Discord profile!
+DiscoRPC is a Custom Discord Rich Presence Tool which allows you to easily spice up your Discord profile!
 
-# Discord-RPC Setup
+# Setup 📘
 
 ![image](https://user-images.githubusercontent.com/75194878/123886987-8c522b00-d948-11eb-8208-8f2685605a77.png)
 
@@ -11,6 +11,7 @@ Discord-RPC is a Custom Discord Rich Presence Tool which allows you to easily sp
 
 ![image](https://user-images.githubusercontent.com/75194878/123887489-801a9d80-d949-11eb-9bca-631f40ce14fd.png)
 
+# Tools 🔹
 > Client ID
 
     Discord Applications Client ID
@@ -29,7 +30,7 @@ Discord-RPC is a Custom Discord Rich Presence Tool which allows you to easily sp
 
 > Large & Small Icon Names
 
-    Your Applications Large / Small Icon Names
+    Your Custom Large / Small Hover Text
 
 > Large & Small Icon Text
 
