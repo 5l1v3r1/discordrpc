@@ -1,6 +1,6 @@
-# DiscoRPC 🧿
+# DiscordRPC 🟦
 
-DiscoRPC 🧿 is a Custom Discord Rich Presence Tool which allows you to easily spice up your Discord profile!
+DiscordRPC 🟦 is a Custom Discord Rich Presence Tool which allows you to easily spice up your Discord profile!
 
 # Setup 🔹
 Set up a Discord Presence on the developer portal and enter the information asked into the program!
